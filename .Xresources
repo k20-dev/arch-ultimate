@@ -1,0 +1,8 @@
+URxvt.scrollBar:false
+URxvt.depth:32
+URxvt*transparent:true
+URxvt*shading:40
+URxvt.cursorBlink:true
+URxvt.font:xft:Fira Mono for Powerline::size=15
+URxvt.letterSpace:-1
+
