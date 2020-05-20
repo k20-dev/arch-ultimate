@@ -53,15 +53,12 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " 
 set number
-set tabstop=4
+set tabstop=2
 map <C-n> :NERDTreeToggle<CR>
 syntax on
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='jellybeans'
-
-colo synic
-let g:airline_theme='ubaryd'
+let g:airline_theme='monochrome'
 
 hi Normal guibg=NONE ctermbg=NONE
 

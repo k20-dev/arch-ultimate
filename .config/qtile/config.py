@@ -59,6 +59,7 @@ keys = [
     # multiple stack panes
     Key([mod, "shift"], "Return", lazy.layout.toggle_split()),
     Key([mod], "Return", lazy.spawn("urxvt")),
+    Key([mod, "control"],"Return", lazy.spawn("cool-retro-term")),
 
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout()),
@@ -68,8 +69,11 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "r", lazy.spawncmd()),
 
-    # FIREFOX 
-    Key([mod], "b", lazy.spawn("firefox")),
+    # CHROME
+    Key([mod], "b", lazy.spawn("google-chrome-stable")),
+
+    # QUTEBROWSER
+    Key([mod, "control"], "b", lazy.spawn("qutebrowser")),
 
     # Volume
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
@@ -87,7 +91,10 @@ colors = {
     "pink":  ["#A77AC4", "#A77AC4"],
     "blue":  ["#7197E7", "#7197E7"],
     "darkblue": ["#3F51B5", "#3F51B5"],
-    "black": ["#24242A", "#24242A"]
+    "black": ["#24242A", "#24242A"],
+    "cian": ["349c9c", "349c9c"],
+    "pink900": ["#880E4F", "#880E4F"],
+    "red": ["#B71C1C", "#B71C1C"]
 }
 
 widgets_list = [
@@ -100,16 +107,16 @@ widgets_list = [
     widget.GroupBox(
         font = "Ubuntu Bold",
         fontsize = 9,
-        margin_y = 0,
+        margin_y = 5,
         margin_x = 0,
-        padding_y = 9,
+        padding_y = 20,
         padding_x = 5,
         borderwidth = 1,
         active = colors["white"],
         inactive = colors["white"],
         rounded = False,
         highlight_method = "block",
-        this_current_screen_border = colors["orange"],
+        this_current_screen_border = colors["red"],
         this_screen_border = colors ["grey"],
         other_current_screen_border = colors["dark"],
         other_screen_border = colors["dark"],
@@ -122,68 +129,33 @@ widgets_list = [
         foreground = colors["white"],
         background = colors["dark"]
     ),
-    widget.WindowName(font="Ubuntu",
+    widget.WindowName(font="FiraCode",
         fontsize = 11,
-        foreground = colors["orange"],
+        foreground = colors["cian"],
         background = colors["dark"],
         padding = 5
     ),
-    widget.Prompt(), 
+    widget.Prompt(
+        cursor = True,
+        cursorblink = 0.5,
+        background = colors["red"]
+        ), 
     widget.Systray(
-        background = colors["dark"],
+        background = colors["cian"],
         padding = 1 
-    ),
-    widget.Sep(
-        linewidth = 0,
-        padding = 5,
-        foreground = colors["white"],
-        background = colors["dark"]
-    ),
-    widget.TextBox(
-        font="Ubuntu Bold",
-        text=" ⟳",
-        padding = 5,
-        foreground=colors["white"],
-        background=colors["darkblue"],
-        fontsize=14
-    ),
-    widget.Pacman(
-        execute = "vlc",
-        update_interval = 1800,
-        foreground = colors["white"],
-        background = colors["darkblue"]
-    ),
-    widget.TextBox(
-        text=" ↯",
-        foreground=colors["white"],
-        background=colors["green"],
-        padding = 10,
-        fontsize=14
-    ),
-    widget.TextBox(
-        font = "Ubuntu Bold",
-        text = " ☵",
-        padding = 1,
-        foreground = colors["white"],
-        background = colors["darkblue"],
-        fontsize = 14
-    ),
+    ), 
+    widget.Battery(
+       format = "{char} {percent:2.0%}",
+       background = colors["cian"]
+        ), 
     widget.CurrentLayout(
         foreground = colors["white"],
-        background = colors["darkblue"],
+        background = colors["pink900"],
         padding = 5
-    ),
-    widget.TextBox(
-        font = "Ubuntu Bold",
-        text = " 🕒",
-        foreground = colors["white"],
-        background = colors["orange"],
-        padding = 5,
-        fontsize = 14
     ),
     widget.Clock(
         foreground = colors["white"],
-        background = colors["orange"],
+        background = colors["cian"],
         format = "%A, %B %d - %H:%M"
     ),
 ]
@@ -209,9 +181,11 @@ for i in range(len(groups)):
     ])
 
 layouts = [
-    layout.MonadTall(border_width= 2, margin= 20, border_focus = colors ["blue"][0]),
+    layout.MonadTall(border_width= 2, margin= 15, border_focus = colors ["cian"][0]),
     layout.Max(),
-    layout.Floating()
+    layout.Floating(),
+    # layout.Matrix(border_width= 3, border_focus = colors ["blue"][0]),
+    layout.MonadWide(border_width= 2,margin= 15, border_focus = colors ["blue"][0])
 ]
     
 widget_defaults = dict(
