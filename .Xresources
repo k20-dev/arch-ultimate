@@ -1,5 +1,6 @@
 URxvt.scrollBar:false
 URxvt.depth:32
 URxvt.cursorBlink:true
-URxvt.font:xft:Fira Mono for Powerline:bold:size=11
+URxvt.font:xft:FiraCode Nerd Font Mono:size=12
 URxvt.letterSpace:-1
+URxvt.internalBorder:5
