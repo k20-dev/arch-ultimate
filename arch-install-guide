@@ -1,0 +1,33 @@
+// ARCH INSTALLATION GUIDE - BY : DANIEL PLATA
+--------------------------------------------
+--------------------------------------------
+
+// PARTITIONS
+-------------------
+sda1 8G SWAP
+sda2 512M BOOT
+sda3 20G ROOT
+sda4 RESTANTE HOME
+
+// QTILE 
+--------------------
+mkdir -p ~/.config/qtile
+pacman -S qtile
+cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
+
+// LIGHTDM
+--------------------
+pacman -S lightdm
+pacman -S lightdm-gtk-greeter lightdm-gtk-greeter-settings
+sudo systemctl enable lightdm.service
+
+// ADD USER ARCH
+--------------------
+useradd -m -g users -G storage,power,wheel -S  /bin/bash danielgr19
+passwd danielgr19
+EDITOR=nano visudo
+	- Comment % wheel ALL=(ALL)all
+
+// AUDIO
+--------------------
+pacman -S pavucontrol pulseaudio
