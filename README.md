@@ -8,9 +8,20 @@
 <h2>Window Manager: Qtile</h2>
 <p><a href="http://www.qtile.org/">Qtile</a> its going to be your<b>Desktop Enviroment Taste</b> for this OS Build, fast and very customizable, Qtile its going to give us a fast coding experience with his Window Managing System lightweight that can even run smoothly on 1.0 GHz Proccesor's</p>
 <br>
-<p>Once Arch its already instaled (<a href="https://wiki.archlinux.org/index.php/Installation_guide#Installation">Arch installation guide</a>) we need to install an Desktop Enviroment, to install Qtile follow these 3 steps</p>
+<p>Once Arch its already instaled (<a href="https://wiki.archlinux.org/index.php/Installation_guide#Installation">Arch installation guide</a>) we need to install an Desktop Enviroment, to install Qtile follow these 3 steps</p><br>
 
 
-
+<i><b>Create Qtile folder :</b></i>
 ```
-Arch itArch its alrea Arch its alrea Arch its alrea Arch its alrea
+mkdir -p ~/.config/qtile
+```
+<i><b>Install Qtile :</b></i>
+```
+sudo pacman -S qtile
+```
+<i><b>Generate default Qtile's .config file :</b></i>
+```
+cp /usr/share/doc/qtile/default_config.py ~/.config/qtile/config.py
+```
+
+<p>Once Arch its already instaled (<a href="https://wiki.archlinux.org/index.php/Installation_guide#Installation">Arch installation guide</a>) we need to install an Desktop Enviroment, to install Qtile follow these 3 steps</p>
