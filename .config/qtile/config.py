@@ -136,15 +136,6 @@ widgets_list = [
 
 groups = [Group(i) for i in ["NET", "DEV", "TERM", "MEDIA", "EXTRA 1", "EXTRA 2"]]
 
-#for i in groups:
-#    keys.extend([
-#        # mod1 + letter of group = switch to group
-#        Key([mod], i.name, lazy.group[i.name].toscreen()),
-#
-        # mod1 + shift + letter of group = switch to & move focused window to group
-#        Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
-#    ])
-
 for i in range(len(groups)):
     actual_key = i + 1
     keys.extend([
