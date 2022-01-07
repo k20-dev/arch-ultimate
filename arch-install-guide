@@ -31,3 +31,8 @@ EDITOR=nano visudo
 // AUDIO
 --------------------
 pacman -S pavucontrol pulseaudio
+
+
+// Guest Adittions
+pacman -S virtualbox-guest-utils
+systemctl enable vboxservice.service
