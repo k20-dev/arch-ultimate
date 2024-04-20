@@ -1,0 +1,15 @@
+URxvt.scrollBar:false
+URxvt.depth:32
+URxvt.cursorBlink:true !URxvt.background: rgba:0000/0000/0200/c900 !URxvt.font:xft:CaskaydiaCove Nerd Font Mono:size=12
+URxvt.font:xft:JetBrainsMono Nerd Font Mono:size=13
+URxvt.letterSpace:-1
+URxvt.internalBorder:10
+!URxvt.highlightSelection: true
+!URxvt.shading: 15
+!URxvt.tintColor: #000000
+!URxvt.transparent: true
+!URxvt.blurRadius: 5
+URxvt*highlightSelection: true
+!URxvt*transparent: true !URxvt*shading: 30 !URxvt*background: #100016
+!URxvt*blurRadius: 5
+URxvt.keysym.M-Escape: perl:keyboard-select:activate

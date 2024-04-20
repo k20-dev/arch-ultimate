@@ -1,0 +1,43 @@
+#	# # # # # # # # # # # # # # #
+#	# DP - CUSTOM FISH TERMINAL #
+#	# # # # # # # # # # # # # # # 
+#
+#	⣶⣿⣾⣷⣷⣾⣿⣿⣿⠋⠀⠀⠀⢠⣾⣿⣿⣿⣶⣤⣤⡀⠀⠀⢀⠀⢹⣿⣿
+#	⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣿⣷⣸⣿⣿
+#	⣿⣿⣿⣿⣿⣿⡿⡟⠀⠀⠀⠀⢿⣿⣿⣿⢷⣿⣿⣿⣿⣿⣿⣿⠿⠁⠃⣿⣿
+#	⣿⣿⣿⣿⣿⣿⡄⡘⣤⠀⢀⣾⣿⣻⡿⢿⣿⣿⣿⣿⣿⣿⣿⣏⠀⠀⠀⣿⣿
+#	⣿⣿⣿⣿⣿⣿⣿⡉⣩⠀⣦⡙⠟⠟⠛⢓⠀⠙⢿⣿⣿⣿⣿⡧⠀⠀⣾⣿⣿
+#	⣿⣿⣿⣿⣿⣿⢿⣯⣿⢸⣿⣷⡗⠀⠀⠁⠒⠠⢀⢰⡿⠻⠼⠓⠂⠘⢿⣿⣿
+#	⣻⣿⡟⣯⣿⢋⣯⡟⣿⠏⠿⣿⣧⠀⠀⠀⠀⠀⠀⣨⡇⠀⠀⠀⠀⠀⣈⣿⣿
+#	⣿⣿⠿⣟⣻⣿⣿⣇⡟⡀⠀⣹⣿⣷⣦⣤⣤⣦⣾⣿⠇⠀⠀⠀⠀⢀⣾⣿⣿
+#	⣿⠃⠐⢩⣿⣿⢟⠟⠃⠀⠀⢸⣿⣿⣿⣿⡟⠿⢿⣿⡄⢰⡆⠀⢀⣿⣿⣿⣿
+#	⡏⡄⠀⠀⢻⡁⠀⠀⠀⠀⠐⠅⢻⣿⣿⣿⣿⣶⡄⠀⠀⠀⠁⢀⣾⣿⣿⣿⣿
+#	⠔⠀⠀⠀⠈⢟⢄⠀⠀⠀⠀⠈⠘⠛⢷⡄⠀⠭⠉⠁⠀⠀⢠⣾⣿⣿⣿⣿⣿
+#	⢵⠀⠀⠀⠀⠈⢉⣦⠀⠀⠀⠀⠀⢱⣶⣿⣶⣶⡄⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿
+#	⢀⡐⠀⠀⠀⠀⠈⢼⢅⠀⠀⠀⠀⠀⠈⠉⠛⠛⠁⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿
+#	⠐⠀⠠⡀⠀⠀⠀⠈⠛⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢣⠉⠉⠉⠙⠻⠿⠿⣿
+#	⠓⠄⡀⠈⠢⠀⠀⠐⢤⣄⡀⠀⠀⠀⠀⠰⠀⠀⠀⠀⠀⠣⡄⠀⠀⠀
+
+# Initialize Oh-My-Posh
+oh-my-posh --init --shell fish --config ~/.poshthemes/plague.omp.json | source
+
+# ALIASES
+# Routes : Go to directory
+alias 	gh	   "cd ~/"
+alias 	codes  "cd /mnt/c/Users/danit/code"
+alias	gr	   "cd /mnt/c/Users/danit/OneDrive/Documentos/repositoriosGIT"
+# Current project
+alias	app  "cd /mnt/c/Users/danit/code/angular/"	 	
+
+# Files  : Edit files
+alias   lvrc   "vim ~/.vimrc"
+alias   wvrc   "vim /mnt/c/Users/danit/_vimrc"
+alias 	funnn  "vim /mnt/c/Users/danit/code/funnn"
+
+# List Aliases
+alias 	lfish  "cats ~/.config/fish/config.fish"
+alias 	efish  "vim ~/.config/fish/config.fish" 
+
+# Software : custom software shortcuts
+alias 	rr 	   "ranger" 
+alias   cats   "highlight -O ansi --force"
