@@ -265,6 +265,32 @@ require("lazy").setup({
 	},
 	{ "brenoprata10/nvim-highlight-colors", opts = {} },
 	{ "xiyaowong/transparent.nvim", opts = {} },
+	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
+	-- {
+	-- 	"olrtg/nvim-emmet",
+	-- 	config = function()
+	-- 		vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation)
+	-- 		vim.g.emmet_filetypes = { "html", "javascript", "javascriptreact", "typescriptreact" }
+	-- 	end,
+	-- },
+	--
+	{
+		"mattn/emmet-vim",
+		config = function()
+			vim.g.user_emmet_leader_key = "<C-y>"
+			vim.g.user_emmet_settings = {
+				javascript = {
+					extends = "jsx",
+				},
+				javascriptreact = {
+					extends = "jsx",
+				},
+				typescriptreact = {
+					extends = "jsx",
+				},
+			}
+		end,
+	},
 
 	-- Here is a more advanced example where we pass configuration
 	-- options to `gitsigns.nvim`. This is equivalent to the following Lua:
