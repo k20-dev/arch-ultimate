@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import os
 import socket
 import subprocess
@@ -32,6 +31,8 @@ keys = [
 
     Key([mod], "n", lazy.layout.swap_column_left()), 
     Key([mod], "m", lazy.layout.swap_column_left()),
+
+    #Key([mod, "control"], ".", lazy.layout.grow_main),
 
     Key([mod, "control"], "j", lazy.layout.grow_down()),
     Key([mod, "control"], "k", lazy.layout.grow_up()),
@@ -95,6 +96,12 @@ def window_to_next_screen(qtile, switch_group=False, switch_screen=False):
         if switch_screen == True:
             qtile.cmd_to_screen(i + 1)
 
+@hook.subscribe.client_new
+def set_pavucontrol_floating(window):
+    if "pavucontrol" in window.window.get_wm_class():
+        window.floating = True
+        window.set_position_floating(2130,50)
+        window.set_size_floating(400,500)
 
 # TODO fix MUS layout && add music station there
 group_names = [
@@ -153,7 +160,7 @@ extension_widget_defaults = dict(
 
 layouts = [
     layout.MonadTall(
-        border_focus = colors[17],
+        #border_focus = colors[17],
         border_normal = colors[1],
         border_width=3,
         margin=15,
@@ -162,13 +169,19 @@ layouts = [
     ),
     layout.Floating(
         border_focus = colors[17],
-        border_normal = colors[14]
+        border_normal = colors[14],
     ),
     layout.Columns(
-        border_focus=colors[17],
+        #border_focus=colors[17],
         margin=15
-),
-    layout.Max()
+    ),
+    layout.Max(),
+    layout.Spiral(
+        margin=15
+    ),
+    layout.MonadThreeCol(
+        margin=15
+    ),
 ]
 
 prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
@@ -475,16 +488,21 @@ follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
 
-floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    *layout.Floating.default_float_rules,
-    Match(wm_class='confirmreset'),  # gitk
-    Match(wm_class='makebranch'),  # gitk
-    Match(wm_class='maketag'),  # gitk
-    Match(wm_class='ssh-askpass'),  # ssh-askpass
-    Match(title='branchdialog'),  # gitk
-    Match(title='pinentry'),  # GPG key password entry
-])
+floating_layout = layout.Floating(
+    float_rules=[
+        # Run the utility of `xprop` to see the wm class and name of an X client.
+        *layout.Floating.default_float_rules,
+        Match(wm_class='confirmreset'),  # gitk
+        Match(wm_class='makebranch'),  # gitk
+        Match(wm_class='maketag'),  # gitk
+        Match(wm_class='ssh-askpass'),  # ssh-askpass
+        Match(title='branchdialog'),  # gitk
+        Match(title='pinentry'),  # GPG key password entry
+    ],
+    no_reposition_rules = [
+        Match(wm_class="pavucontrol"),
+    ]
+)
 
 auto_fullscreen = True
 focus_on_window_activation = "smart"
