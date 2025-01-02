@@ -266,14 +266,16 @@ require("lazy").setup({
 	{ "brenoprata10/nvim-highlight-colors", opts = {} },
 	{ "xiyaowong/transparent.nvim", opts = {} },
 	{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
-	-- {
-	-- 	"olrtg/nvim-emmet",
-	-- 	config = function()
-	-- 		vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation)
-	-- 		vim.g.emmet_filetypes = { "html", "javascript", "javascriptreact", "typescriptreact" }
-	-- 	end,
-	-- },
-	--
+	{ "AlphaTechnolog/pywal.nvim", opts = {} },
+	{
+		"oncomouse/lushwal.nvim",
+		cmd = { "LushwalCompile" },
+		dependencies = {
+			{ "rktjmp/lush.nvim" },
+			{ "rktjmp/shipwright.nvim" },
+		},
+		lazy = false,
+	},
 	{
 		"mattn/emmet-vim",
 		config = function()
