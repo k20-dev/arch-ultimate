@@ -41,7 +41,8 @@ alias 	lfish  "cat ~/.config/fish/config.fish"
 alias 	efish  "nvim ~/.config/fish/config.fish"
 
 # Git Token
-alias gittoken "git push https://danielplata79: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@github.com/danielplata79/reactjschat"
+alias 	gittoken "echo git push https://danielplata79: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@github.com/danielplata79/reactjschat"
+# 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
 
 # List Aliases
 
